@@ -1,2 +1,4 @@
 virtual/
 notes.txt
+.env
+*pyc
