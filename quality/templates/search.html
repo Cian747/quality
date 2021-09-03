@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if images %}
+<h4>Found{{ images | length }} of {{ message }}</h4>
+{% else %}
+<h4>Sorry didn't find the anything on {{ message }}. Try another country</h4>
+{% endif %}
+<div class="contaner-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {% for image in images %}
+                <div class="card" style="width: 25rem;">
+                    <img src="{{ image.image.url }}" class="card-img-top" alt="..." width="100%" height="auto">
+                    <div class="card-body">
+                        <h2 class="card-text">{{ image.image_name }}</h2>
+                        <p class="card-tetx">{{ image.image_description }}</p>
+                        <cite class="card text">{{ image.posted }}</cite>
+                        <a href="{% url 'update_post' image.pk %}">(Edit post)</a>
+                        <a href="{% url 'delete_post' image.pk %}">(Delete post)</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
