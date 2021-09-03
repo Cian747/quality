@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="container">
+    <h3 class="p-5">Delete {{ object.image_name }}?</h3>
+    <hr>
+
+    <form method="post">
+    {% csrf_token %}
+        <strong>Are you sure?!!!</strong>
+        <button class="btn btn-danger">Delete Post!</button>
+    
+</div>
+{% endblock %}
