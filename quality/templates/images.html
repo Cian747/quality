@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="contaner-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ object.image.url }}" class="card-img-top" alt="..." width="100%" height="auto">
+          <div class="card-body">
+            <h2 class="card-text">{{ object.image_name }}</h2>
+            <p class="card-tetx">{{ object.image_description }}</p>
+            <cite class="card text">{{ object.posted }}</cite>
+            <a href="{% url 'update_post' object.pk %}">(Edit post)</a>
+            <a href="{% url 'delete_post' object.pk %}">(Delete post)</a>
+          </div>
+          <div class="form-group">
+            <label for="secret">Image Link</label>
+            <input type="text" class="form-control" id="secret" value="{{ object.image.url }}" readonly>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary" onclick="copySecret()">Copy Image link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  function copySecret() {
+    /* Get the text field */
+    var copyText = document.getElementById("secret");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    alert("Successfully copied Image link!");
+  }
+</script>
+
+
+{% endblock %}
