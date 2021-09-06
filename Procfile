@@ -1,1 +1,1 @@
-web: gunicorn peaceful-river-25303.wsgi --log-file -
+web: gunicorn photohubke.wsgi --log-file -
