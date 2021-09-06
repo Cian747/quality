@@ -10,13 +10,6 @@
 		</form>
 	</div> -->
 
-	{% for location in locations %}
-	<a href="{% url 'view_locations' location.id %}"><button type="button" name="" id="" class="btn btn-primary">
-			{{ location.area }}
-		</button></a>
-		{% empty %}
-	{% endfor %}
-	<a class="p-1 link-secondary" href="{% url 'admin:index' %}">Admin</a>
 	<div class="album">
 		<div class="row">
 			{% for image in images %}

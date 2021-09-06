@@ -12,18 +12,18 @@ class ImageForm(forms.ModelForm):
             'image_name':forms.TextInput(attrs={'class':'form-control'}),
             'image_description':forms.Textarea(attrs={'class':'form-control'}),
             'user':forms.Select(attrs={'class':'form-control'}),
-            'location':forms.SelectMultiple(attrs={'class':'form-control'}),
+            'location':forms.Select(attrs={'class':'form-control'}),
             'category':forms.SelectMultiple(attrs={'class':'form-control'})
         
         }
 class UpdateForm(forms.ModelForm):
     class Meta:
         model = Images
-        fields = ('image_name','image_description','location')
+        fields = ('image_name','image_description','location','category')
 
         widgets = {
             'image_name':forms.TextInput(attrs={'class':'form-control'}),
             'image_description':forms.Textarea(attrs={'class':'form-control'}),
-            'location':forms.SelectMultiple(attrs={'class':'form-control'}),
+            'location':forms.Select(attrs={'class':'form-control'}),
             'category':forms.SelectMultiple(attrs={'class':'form-control'}),
         }

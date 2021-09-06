@@ -2,17 +2,17 @@
 
 
 {% block content %}
-<div class="album">
-    <div class="row">
-      {% for image in locations %}
-      <div class="col-md-4">
-        <img src="{{ image.image.url }}" class="img-responsive" alt="" width="100%" height="auto"
-          data-bs-toggle="modal" data-bs-target="#Modal{{ image.id }}" />
-        {% include 'modals.html' %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
 
+<div class="album">
+  <div class="row">
+    {% for image in locations %}
+    <div class="col-md-4 p-1">
+      <img src="{{ image.image.url }}" class="img-responsive" alt="" width="100%" height="100%" data-bs-toggle="modal"
+      data-bs-target="#Modal{{ image.id }}" />
+      {% include 'modals.html' %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}

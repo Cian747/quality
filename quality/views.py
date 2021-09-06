@@ -59,12 +59,8 @@ def view_locations(request):
     return render(request,'welcome.html',{"locations":locations})
 
 def go_to_locations(request, location):
-    locations = Images.objects.filter(location_id = location).all()
-    print(locations)
-    return render(request,'location.html',{"location": locations}) 
-
-
-
+    locations = Images.objects.filter(location = location).all()
+    return render(request,'location.html',{"locations": locations}) 
 
 
 

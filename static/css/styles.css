@@ -42,7 +42,8 @@
 
 }
 .post-image{
-    background-color:#FBFEF9;
+    
+    background-color:#F0F7F4;
     margin-top: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     display: flex;
@@ -50,6 +51,27 @@
     align-items: center;
     justify-content: center;
     width: 80%;
+}
+
+.edit-image{
+
+    background-color:#F0F7F4;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+}
+
+.edit-image h2{
+    font-weight:600;
+    font-family: "Playfair Display", Georgia, "Times New Roman",serif ;
+    text-decoration: underline;
+
 }
 
 .post-image h2{

@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 #         'PASSWORD': 'ms254'
 #     }
 # }
+
 if config('MODE')=="dev":
    DATABASES = {
        'default': {

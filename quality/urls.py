@@ -12,7 +12,7 @@ urlpatterns=[
     path('image/update_post/<int:pk>',UpdateImagesView.as_view(),name = 'update_post'),
     path('image/delete_post/<int:pk>/removed',DeleteImagesView.as_view(),name = 'delete_post'),
     url(r'^search/',views.search_results,name = 'search_category'),
-    # path('nav/location/<int:pk>',views.view_locations,name = 'all_locations'),
+    path('nav/location/<int:pk>',views.view_locations,name = 'all_locations'),
     url(r'^location/(\d+)',views.go_to_locations,name = 'view_locations'),
 ]
 if settings.DEBUG:
