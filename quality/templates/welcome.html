@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
-
-
-
 {% block content %}
 
-<div class="row">
-    {% if object_list %}
-        {% for image in object_list %}
-        <div class="col-md-4">
-            <img src="{{ image.image.url }}" alt="" width="100%" height="600" data-bs-toggle="modal" data-bs-target="#modal{{ image.id }}">
-            <p>Uploaded by: <a href="{% url 'image_details' image.pk %}">{{ image.user.username }}</a></p>
-            <a href="{% url 'update_post' image.pk %}">(Edit post)</a>
-            <a href="{% url 'delete_post' image.pk %}">(Delete post)</a>
-        </div>
-        {% include 'modals.html' %}
-        {% endfor %}
-        {% else %}
-        <div class="col-md-4">
-            <img src="https://images.unsplash.com/photo-1630449425737-4341b0600bb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-                class="d-block w-100" alt="old days" width="100%" height="600">
-        </div>
-    </div>
-    {% endif %}
+<div class="container-fluid">
 
+	<!-- <div class="search-area">
+		<form class="d-flex ms-auto" role="search" action="{% url 'search_category' %}">
+			<input class="form-control me-2" type="search" placeholder="Search category" name="category" aria-label="Search">
+			<button class="btn btn-outline-success" type="submit">Search</button>
+		</form>
+	</div> -->
 
+	{% for location in locations %}
+	<a href="{% url 'view_locations' location.id %}"><button type="button" name="" id="" class="btn btn-primary">
+			{{ location.area }}
+		</button></a>
+		{% empty %}
+	{% endfor %}
+	<a class="p-1 link-secondary" href="{% url 'admin:index' %}">Admin</a>
+	<div class="album">
+		<div class="row">
+			{% for image in images %}
+			<div class="col-md-4 p-1">
+				<img src="{{ image.image.url }}" class="img-responsive" alt="" width="100%" height="100%" data-bs-toggle="modal"
+					data-bs-target="#Modal{{ image.id }}" />
+				{% include 'modals.html' %}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
 {% endblock %}
-

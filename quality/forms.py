@@ -25,4 +25,5 @@ class UpdateForm(forms.ModelForm):
             'image_name':forms.TextInput(attrs={'class':'form-control'}),
             'image_description':forms.Textarea(attrs={'class':'form-control'}),
             'location':forms.SelectMultiple(attrs={'class':'form-control'}),
+            'category':forms.SelectMultiple(attrs={'class':'form-control'}),
         }

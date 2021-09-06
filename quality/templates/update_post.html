@@ -2,13 +2,16 @@
 
 
 {% block content %}
-<div class="container">
-    <h2 class="text-center p-5">Edit Post</h2>
-
-    <form method="post">
-    {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-primary">Post</button>
-    
+<div class="container d-flex justify-content-center">
+    <div class="post-image">
+        <h2 class="text-center">Edit <span class="text-blue">Image</span> </h2>
+        <div class="form-group d-flex">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class=" d-inline-block btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,5 +1,85 @@
-body{
+* {
+    padding: 0;
+    margin: 0;
 
-    background-color:brown;
+}
+.blog-header {
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    padding: 5px;
+}
+  
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman",serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    font-size: 2.25rem;
+}
+  
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+/* DELETE PAGE */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  /*  */
+
+.album{
+    padding: auto;
+    margin: 1rem auto;
+
+}
+.post-image{
+    background-color:#FBFEF9;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.post-image h2{
+    font-weight:600;
+    font-family: "Playfair Display", Georgia, "Times New Roman",serif ;
+    text-decoration: underline;
+
+}
+
+.details h1{
+    font-weight:600;
+    font-family: "Playfair Display", Georgia, "Times New Roman",serif ;
+    text-decoration: underline;
+
+}
+.search-area{
+
+    background-image: url(https://images.unsplash.com/photo-1630687576589-43a3bc515e85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80);
+    background-repeat: no-repeat;
+    background-size:cover;
+    align-items: center;
+    justify-content: center;
+    padding:100px;
+}
+.finder{
+    padding: 50px;
+    background-color: ghostwhite;
+    font-family: "Playfair Display", Georgia, "Times New Roman",serif ;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 }

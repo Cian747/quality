@@ -1,17 +1,29 @@
 from django.db import models
 import datetime as dt
 from django.contrib.auth.models import User
+from django.db.models.deletion import DO_NOTHING
 from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=20,null=False,blank=False)
 
+
+    @classmethod
+    def all_categories(cls):
+        categories = cls.objects.all()
+        return categories
+
     def __str__(self):
         return self.name
 
 class Location(models.Model):
     area = models.CharField(max_length=20)
+
+    @classmethod
+    def all_locations(cls):
+        locations = Location.objects.all()
+        return locations
 
     def __str__(self):
         return self.area
@@ -21,12 +33,16 @@ class Images(models.Model):
     image_name = models.CharField(max_length=20)
     image_description = models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    location = models.ManyToManyField(Location)
+    location = models.ForeignKey(Location,on_delete=DO_NOTHING)
     posted = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category)
 
     def save_image(self):
         self.save() 
+
+    
+    def get_absolute_url(self):
+        return reverse('welcome',args=None)
 
     @classmethod
     def fetch_all(cls):
@@ -52,9 +68,11 @@ class Images(models.Model):
     def search_category(cls,search_category):
         get_category = cls.objects.filter(category__name__icontains = search_category ).all()
         return get_category
+    
+    @classmethod
+    def image_location(cls,location):
+        see_location = cls.objects.filter(location__name__icontains = location).all()
+        return see_location
 
-
-    def get_absolute_url(self):
-        return reverse('image_details',args=(str(self.id)) )
 
 
