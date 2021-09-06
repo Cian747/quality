@@ -1,1 +1,1 @@
-web: gunicorn tribune.wsgi --log-file -
+web: gunicorn peaceful-river-25303.wsgi --log-file -
