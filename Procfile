@@ -1,1 +1,1 @@
-web: gunicorn photohubke.wsgi --log-file -
+web: gunicorn quality.wsgi --log-file -
